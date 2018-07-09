@@ -38,7 +38,6 @@ public class IntroExampleActivity extends Activity {
     public static final String TAG = "IntroExampleActivity";
 
     private LinearLayout rootLayout;
-
     
     private Realm realm;
 
