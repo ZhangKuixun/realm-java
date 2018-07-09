@@ -30,6 +30,7 @@ import io.reactivex.BackpressureStrategy;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.realm.Realm;
+import io.realm.RealmResults;
 import io.realm.examples.rxjava.R;
 import io.realm.examples.rxjava.model.Person;
 
@@ -69,7 +70,7 @@ public class ThrottleSearchActivity extends AppCompatActivity {
                 })
                 // Only continue once data is actually loaded
                 // RealmObservables will emit the unloaded (empty) list as its first item
-                .filter(people -> people.isLoaded())
+                .filter(RealmResults::isLoaded)
                 .subscribe(people -> {
                     searchResultsView.removeAllViews();
                     for (Person person : people) {
@@ -77,7 +78,7 @@ public class ThrottleSearchActivity extends AppCompatActivity {
                         view.setText(person.getName());
                         searchResultsView.addView(view);
                     }
-                }, throwable -> throwable.printStackTrace());
+                }, Throwable::printStackTrace);
     }
 
     @Override

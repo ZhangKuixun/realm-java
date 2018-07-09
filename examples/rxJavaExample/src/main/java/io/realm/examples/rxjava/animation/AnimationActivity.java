@@ -52,7 +52,7 @@ public class AnimationActivity extends AppCompatActivity {
         // All RealmObject access has to be done on the same thread `findAllAsync` was called on.
         // Warning: This example doesn't handle back pressure well.
         disposable = realm.where(Person.class).findAllAsync().asFlowable()
-                .flatMap(persons -> Flowable.fromIterable(persons))
+                .flatMap(Flowable::fromIterable)
                 .zipWith(Flowable.interval(1, TimeUnit.SECONDS), (person, tick) -> person)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(person -> {

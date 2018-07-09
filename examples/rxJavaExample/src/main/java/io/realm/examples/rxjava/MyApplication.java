@@ -29,6 +29,7 @@ import io.realm.examples.rxjava.model.Person;
 public class MyApplication extends Application {
 
     private static final TreeMap<String, String> testPersons = new TreeMap<>();
+
     static {
         testPersons.put("Chris", null);
         testPersons.put("Christian", "cmelchior");

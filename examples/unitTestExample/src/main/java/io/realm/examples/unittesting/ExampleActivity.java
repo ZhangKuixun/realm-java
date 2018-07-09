@@ -16,6 +16,7 @@
 
 package io.realm.examples.unittesting;
 
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -52,7 +53,7 @@ public class ExampleActivity extends AppCompatActivity {
         basicCRUD(realm);
 
         // More complex operations can be executed on another thread.
-        AsyncTask<Void, Void, String> foo = new AsyncTask<Void, Void, String>() {
+        @SuppressLint("StaticFieldLeak") AsyncTask<Void, Void, String> foo = new AsyncTask<Void, Void, String>() {
             @Override
             protected String doInBackground(Void... voids) {
                 String info = "";

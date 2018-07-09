@@ -40,9 +40,9 @@ import io.realm.examples.librarymodules.modules.ZooAnimalsModule;
 import io.realm.exceptions.RealmException;
 
 /**
-* This example demonstrates how you can use modules to control which classes belong to which Realms and how you can
+ * This example demonstrates how you can use modules to control which classes belong to which Realms and how you can
  * work with multiple Realms at the same time.
-*/
+ */
 public class ModulesExampleActivity extends Activity {
 
     public static final String TAG = ModulesExampleActivity.class.getName();
@@ -119,7 +119,7 @@ public class ModulesExampleActivity extends Activity {
         // You can copy objects between Realms
         showStatus("Copy objects between Realms");
         showStatus("Number of pigs on the farm : " + farmRealm.where(Pig.class).count());
-        showStatus("Copy pig from defaultRealm to farmRealm");
+        showStatus("Copy one pig from defaultRealm to farmRealm");
         final Pig defaultPig = defaultRealm.where(Pig.class).findFirst();
         farmRealm.executeTransaction(new Realm.Transaction() {
             @Override

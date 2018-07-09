@@ -135,7 +135,7 @@ public class GotchasActivity extends AppCompatActivity {
         compositeDisposable.add(distinctDisposable);
 
         Disposable distinctKeySelectorDisposable = personFlowable
-                .distinct(person -> person.getAge())
+                .distinct(Person::getAge)
                 .subscribe(person -> showStatus("distinct(keySelector): " + person.getName() + ":" + person.getAge()));
         compositeDisposable.add(distinctKeySelectorDisposable);
     }

@@ -33,23 +33,21 @@ import io.realm.RealmConfiguration;
 import io.realm.examples.realmmigrationexample.model.Migration;
 import io.realm.examples.realmmigrationexample.model.Person;
 
-/*
-** This example demonstrates how you can migrate your data through different updates
-** of your models.
-*/
+/**
+ * 这个示例演示了如何通过模型的不同更新来迁移数据。
+ */
 public class MigrationExampleActivity extends Activity {
 
     public static final String TAG = MigrationExampleActivity.class.getName();
 
     private LinearLayout rootLayout = null;
-    private Realm realm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_realm_migration_example);
 
-        rootLayout = ((LinearLayout) findViewById(R.id.container));
+        rootLayout = (findViewById(R.id.container));
         rootLayout.removeAllViews();
 
         // 3 versions of the databases for testing. Normally you would only have one.
@@ -70,7 +68,7 @@ public class MigrationExampleActivity extends Activity {
         } catch (FileNotFoundException ignored) {
             // If the Realm file doesn't exist, just ignore.
         }
-        realm = Realm.getInstance(config0);
+        Realm realm = Realm.getInstance(config0);
         showStatus("Default0");
         showStatus(realm);
         realm.close();

@@ -34,12 +34,14 @@ import io.realm.examples.rxjava.throttle.ThrottleSearchActivity;
 public class MainActivity extends AppCompatActivity {
 
     private ViewGroup container;
-    private final TreeMap<String, Class<? extends Activity>> buttons = new TreeMap<String, Class<? extends Activity>>() {{
-        put("Animation", AnimationActivity.class);
-        put("Throttle search", ThrottleSearchActivity.class);
-        put("Network", RetrofitExample.class);
-        put("Working with Realm", GotchasActivity.class);
-    }};
+    private final TreeMap<String, Class<? extends Activity>> buttons = new TreeMap<String, Class<? extends Activity>>() {
+        {
+            put("Animation", AnimationActivity.class);
+            put("Throttle search", ThrottleSearchActivity.class);
+            put("Network", RetrofitExample.class);
+            put("Working with Realm", GotchasActivity.class);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
