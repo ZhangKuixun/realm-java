@@ -39,6 +39,7 @@ public class IntroExampleActivity extends Activity {
 
     private LinearLayout rootLayout;
 
+    
     private Realm realm;
 
     // Results obtained from a Realm are live, and can be observed on looper threads (like the UI thread).
