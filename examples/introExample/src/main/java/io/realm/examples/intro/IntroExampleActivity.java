@@ -38,7 +38,7 @@ public class IntroExampleActivity extends Activity {
     public static final String TAG = "IntroExampleActivity";
 
     private LinearLayout rootLayout;
-    
+
     private Realm realm;
 
     // Results obtained from a Realm are live, and can be observed on looper threads (like the UI thread).
